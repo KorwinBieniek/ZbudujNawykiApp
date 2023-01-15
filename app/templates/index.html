@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zbuduj Plan - Zbuduj Nawyki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}"/>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto&display=swap' rel='stylesheet'>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
+
+</head>
+<body>
+
+<form>
+    <label for="prompt">Jaki nawyk chcesz zdobyć (max 5 słów):</label>
+    <br>
+    <label>Dokończ zdanie: "Chcę zbudować nawyk ..." </label>
+    <textarea name="prompt" id="prompt" rows="1" cols="1"></textarea>
+    <br>
+    <input id="submit-button" type="submit" value="Stwórz plan">
+    <div id="loading" style="display;">
+        <label>To może chwilę potrwać, uzbrój się w cierpliwość</label>
+        <i id="circle" class="fas fa-spinner fa-spin"></i>
+    </div>
+</form>
+<br>
+
+<p id="response"></p>
+<a href="#" id="download-button" download>
+        <i class="fa fa-download"></i> Pobierz plan
+    </a>
+
+<label id="disclaimer">Uwaga: Informacje i opinie wygenerowane przez ten model nie mogą być traktowane jako w pełni wiarygodne lub dokładne.
+    <br>Model ten został wytrenowany na podstawie dostępnych danych, a jego jakość i poprawność językowa mogą zawierać błędy.
+    <br>Nie ponosimy odpowiedzialności za jakiekolwiek szkody lub straty powstałe w wyniku korzystania z informacji wygenerowanych przez ten model.
+    <br>Prosimy o krytyczne podejście i weryfikację wszelkich informacji przed ich wykorzystaniem.</label>
+</body>
+</html>
